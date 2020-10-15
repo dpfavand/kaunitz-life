@@ -6,4 +6,4 @@ pagination:
   size: 1
   addAllPagessToCollections: true
 permalink: posts/{{ post.slug | slug }}/index.html
----
+--- 
