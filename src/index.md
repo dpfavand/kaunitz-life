@@ -1,1 +1,4 @@
-# Index 1
+---
+layout: layouts/MarkdownPage
+---
+# Index

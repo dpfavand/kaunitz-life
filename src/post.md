@@ -1,5 +1,5 @@
 ---
-layout: layouts/main
+layout: layouts/PostPage
 pagination:
   alias: post
   data: posts
