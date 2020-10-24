@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-interface CounterProps {
-}
-
-export default function Counter(props: CounterProps) {
-
+export default function Counter() {
   const [count, setCount] = useState(0);
 
   // eslint-disable-next-line react/prop-types
   return (
     <div>
-      Current Count: <b>{count}</b><br />
-      <button onClick={() => setCount(count + 1)}>Increment</button>
+      Current Count: <b>{count}</b>
+      <br />
+      <button type="button" onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
     </div>
   );
 }

@@ -1,16 +1,9 @@
-import React from "react";
+import React, { ReactChild } from 'react';
 
 interface PageWrapperProps {
-  children?: any;
+  children?: ReactChild[];
 }
 
 export default function PageWrapper({ children }: PageWrapperProps) {
-  // eslint-disable-next-line react/prop-types
-  return (
-    <>
-      <main>
-        {children}
-      </main>
-    </>
-  );
+  return <main>{children}</main>;
 }

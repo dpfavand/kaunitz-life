@@ -1,20 +1,16 @@
-import React from "react";
+import React from 'react';
 import PageWrapper from '../components/PageWrapper';
-import Counter from "../components/Counter";
-import { withHydration } from 'eleventy-plugin-react/utils'
 
-export default function MarkdownPage(props: { content: any; }) {
+export default function MarkdownPage(props: { content: any }) {
   const { content } = props;
 
-  console.log(props)
-
-  const HydratedCounter = withHydration(Counter)
+  // console.log(props);
 
   return (
     <PageWrapper>
       Hello
       {/* This allows us to render markdown HTML */}
-      <HydratedCounter />
+      {/* eslint-disable-next-line react/no-danger */}
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </PageWrapper>
   );
