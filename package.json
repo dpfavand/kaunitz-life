@@ -30,6 +30,7 @@
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.12.0",
     "@types/react": "^16.9.53",
+    "@types/react-helmet": "^6.1.0",
     "babel-loader": "^8.1.0",
     "eleventy-plugin-react": "../eleventy-plugin-react",
     "eslint": "^7.2.0",
@@ -50,6 +51,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.5.0",
-    "eslint-config-airbnb-typescript": "^12.0.0"
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "purgecss": "^3.0.0"
   }
 }

@@ -5,5 +5,9 @@ interface PageWrapperProps {
 }
 
 export default function PageWrapper({ children }: PageWrapperProps) {
-  return <main>{children}</main>;
+  return (
+    <>
+      <main>{children}</main>
+    </>
+  );
 }
