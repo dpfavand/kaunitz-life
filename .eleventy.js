@@ -30,7 +30,7 @@ module.exports = function (eleventyConfig) {
     }
   );
 
-  // eleventyConfig.addPassthroughCopy("./src/styles.css");
+  eleventyConfig.addWatchTarget("./src/styles.css");
 
 
   eleventyConfig.addTransform("inline-css", async function (content, outputPath) {
