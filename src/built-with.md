@@ -1,6 +1,8 @@
 ---
 layout: layouts/MarkdownPage
+title: Built With
 ---
+
 # Built With
 
 ## Eleventy

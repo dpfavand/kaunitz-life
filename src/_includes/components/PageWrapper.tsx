@@ -1,12 +1,14 @@
 import React, { ReactChild } from 'react';
+import { Helmet } from 'react-helmet';
 import { Page } from '../types/Page';
 
 interface PageWrapperProps {
   children?: ReactChild[];
   page?: Page;
+  title?: string;
 }
 
-export default function PageWrapper({ children, page }: PageWrapperProps) {
+export default function PageWrapper({ children, page, title }: PageWrapperProps) {
   const header = page?.url !== '/' && (
     <header>
       <nav>
@@ -21,6 +23,9 @@ export default function PageWrapper({ children, page }: PageWrapperProps) {
 
   return (
     <>
+      <Helmet>
+        <title>{title || page?.fileSlug || ''}</title>
+      </Helmet>
       {header}
       <main>{children}</main>
       <footer>
