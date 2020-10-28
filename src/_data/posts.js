@@ -7,7 +7,7 @@ function generatePost(id) {
 }
 
 async function getPosts() {
-  return ["First", "Second", "Third"].map(generatePost);
+  return ['First', 'Second', 'Third'].map(generatePost);
 }
 
 module.exports = getPosts;
