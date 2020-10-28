@@ -1,4 +1,5 @@
 
+require('dotenv').config();
 const eleventyReact = require("eleventy-plugin-react");
 const { PurgeCSS } = require('purgecss');
 

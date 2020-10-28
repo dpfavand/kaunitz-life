@@ -1,9 +1,9 @@
 import React, { ReactChild } from 'react';
 import { Helmet } from 'react-helmet';
-import { Page } from '../types/Page';
+import { Page } from '../types/data';
 
 interface PageWrapperProps {
-  children?: ReactChild[];
+  children?: ReactChild[] | ReactChild;
   page?: Page;
   title?: string;
 }
