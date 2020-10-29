@@ -7,7 +7,7 @@ export interface Page {
   outputPath: string;
 }
 
-export interface What {
+export interface Topic {
   title?: string;
   shortDescription?: string;
   slug?: string;

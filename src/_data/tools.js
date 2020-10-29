@@ -1,7 +1,7 @@
 const client = require('../../sanityClient');
 
 const query = `
-  *[_type == 'whatIDo'] {
+  *[_type == 'toolIUse'] {
     title,
     shortDescription,
     'slug': slug.current
