@@ -11,6 +11,8 @@ export interface Topic {
   title?: string;
   shortDescription?: string;
   slug?: string;
+  logo?: any;
+  url?: string;
 }
 
 export interface Site {
@@ -18,5 +20,10 @@ export interface Site {
   whatIDo?: {
     title?: string;
     subtitle?: string;
+    featuredTopics?: Topic[];
+  };
+  builtWith?: {
+    title?: string;
+    featuredTopics?: Topic[];
   };
 }

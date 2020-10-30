@@ -1,10 +1,11 @@
 const client = require('../../sanityClient');
 
 const query = `
-  *[_type == 'whatIDo'] {
+  *[_type == 'topic' && kind == 'does'] {
     title,
     shortDescription,
-    'slug': slug.current
+    'slug': slug.current,
+    'logo': logo.asset ->
   }
 `;
 
