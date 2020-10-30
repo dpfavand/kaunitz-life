@@ -17,6 +17,7 @@ export default function Index({ page, site }: IndexProps) {
     <PageWrapper page={page} title={site.siteTitle} site={site}>
       <h1>{site.siteTitle}</h1>
       <h2>{site?.whatIDo?.title}</h2>
+      <p>{site.whatIDo?.subtitle}</p>
       <TopicDirectory items={site.whatIDo?.featuredTopics} pathPrefix="does" HeadingTag="h3" />
     </PageWrapper>
   );

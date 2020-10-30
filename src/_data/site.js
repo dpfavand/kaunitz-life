@@ -14,7 +14,8 @@ const query = `
 *[_id == 'siteStrings'] {
   siteTitle,
   whatIDo {
-  	title,
+    title,
+    subtitle,
   	${featuredTopicsSubquery}
 	},
   toolsIUse,
