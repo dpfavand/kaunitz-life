@@ -8,8 +8,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addWatchTarget("./src/styles.css");
 
-  let thing = 'a';
-
 
   eleventyConfig.addTransform("inline-css", async function (content, outputPath) {
     const results = await new PurgeCSS().purge({
