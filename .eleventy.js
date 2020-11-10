@@ -4,34 +4,11 @@ const eleventyReact = require("eleventy-plugin-react");
 const { PurgeCSS } = require('purgecss');
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(eleventyReact
-    , {
-      babelConfig({ isBrowser }) {
-        return {
-          presets: [
-            ["@babel/preset-react"],
-            ["@babel/preset-typescript"],
-            [
-              "@babel/preset-env",
-              isBrowser
-                ? {
-                  modules: false,
-                  targets: "> 0.25%, not dead",
-                }
-                : {
-                  modules: "commonjs",
-                  targets: {
-                    node: process.versions.node,
-                  },
-                },
-            ],
-          ],
-        };
-      },
-    }
-  );
+  eleventyConfig.addPlugin(eleventyReact);
 
   eleventyConfig.addWatchTarget("./src/styles.css");
+
+  let thing = 'a';
 
 
   eleventyConfig.addTransform("inline-css", async function (content, outputPath) {

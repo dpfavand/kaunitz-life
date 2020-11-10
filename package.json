@@ -35,7 +35,7 @@
     "@types/react-helmet": "^6.1.0",
     "babel-loader": "^8.1.0",
     "dotenv": "^8.2.0",
-    "eleventy-plugin-react": "github:dpfavand/eleventy-plugin-react#initial-tsx-support",
+    "eleventy-plugin-react": "^0.9.1",
     "purgecss": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

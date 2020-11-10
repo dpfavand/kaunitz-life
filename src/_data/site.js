@@ -1,5 +1,7 @@
 const client = require('../../sanityClient');
 
+// break out a subquery for reuse. This one matches
+// a featuredTopics field that can appear on multiple other types
 const featuredTopicsSubquery = `
 featuredTopics[]-> {
       'slug': slug.current,

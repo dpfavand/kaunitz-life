@@ -1,3 +1,6 @@
+/**
+ * These types describe the data resolved by the global site data files and the default eleventy data structures
+ */
 export interface Page {
   date: string;
   inputPath: string;
