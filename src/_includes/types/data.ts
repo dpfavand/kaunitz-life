@@ -25,6 +25,11 @@ export interface Site {
     subtitle?: string;
     featuredTopics?: Topic[];
   };
+  toolsIUse?: {
+    title?: string;
+    subtitle?: string;
+    featuredTopics?: Topic[];
+  };
   builtWith?: {
     title?: string;
     featuredTopics?: Topic[];

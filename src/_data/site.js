@@ -20,7 +20,11 @@ const query = `
     subtitle,
   	${featuredTopicsSubquery}
 	},
-  toolsIUse,
+  toolsIUse {
+    title,
+    subtitle,
+  	${featuredTopicsSubquery}
+	},
   builtWith {
     title,
   	${featuredTopicsSubquery}
