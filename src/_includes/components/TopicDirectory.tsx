@@ -24,7 +24,7 @@ export default function TopicDirectory(props: TopicDirectoryProps) {
           <Image source={item.logo} className="topic-logo" maxWidth={96} />
           <HeadingTag>
             {/* <a href={`/${pathPrefix}/${item.slug}`}> */}
-            {item.title}
+            {item.promo?.heading || item.title}
             {/* </a> */}
           </HeadingTag>
           <p>{item?.promo?.blurb || item.introduction}</p>

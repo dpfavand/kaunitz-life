@@ -17,7 +17,7 @@ export default function TopicPage(props: TopicPageProps) {
     <PageWrapper page={page} title={topic?.title}>
       <Image source={topic.logo} className="topic-logo" maxWidth={96} />
       <h1>{topic?.title}</h1>
-      <p>{topic?.shortDescription}</p>
+      <p>{topic?.introduction}</p>
     </PageWrapper>
   );
 }
