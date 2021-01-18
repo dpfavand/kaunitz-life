@@ -9,13 +9,45 @@ interface PageWrapperProps {
   site?: Site;
 }
 
+interface NavLinkProps {
+  currentUrl?: string;
+  targetUrl: string;
+  children: ReactChild;
+  noParent?: boolean;
+}
+
+function NavLink({ currentUrl, targetUrl, children, noParent = false }: NavLinkProps) {
+  const currentProps: any = {};
+
+  if (currentUrl === targetUrl) {
+    currentProps['aria-current'] = 'page';
+    currentProps.className = 'current';
+  } else if (currentUrl?.startsWith(targetUrl) && !noParent) {
+    currentProps.className = 'parent';
+  }
+
+  return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <a href={targetUrl} {...currentProps}>
+      {children}
+    </a>
+  );
+}
+
 export default function PageWrapper({ children, page, title, site }: PageWrapperProps) {
   const header = page?.url !== '/' && (
     <header>
       <nav>
         <ul>
           <li>
-            <a href="/">Daniel Favand</a>
+            <NavLink targetUrl="/" noParent currentUrl={page?.url}>
+              Daniel Favand
+            </NavLink>
+          </li>
+          <li>
+            <NavLink targetUrl="/posts/" currentUrl={page?.url}>
+              Posts
+            </NavLink>
           </li>
         </ul>
       </nav>

@@ -1,11 +1,12 @@
 import React from 'react';
+import BlockContent from '@sanity/block-content-to-react';
 import PageWrapper from '../components/PageWrapper';
+import { Post, Page } from '../types/data';
+import TopicInlineCard from '../components/TopicInlineCard';
 
 interface PostPageProps {
-  post: {
-    title: string;
-    body: string;
-  };
+  page: Page;
+  post: Post;
   pagination: {
     nextPageHref?: string;
     previousPageHref?: string;
@@ -20,18 +21,28 @@ interface PostPageProps {
   };
 }
 
+const serializers = {
+  types: {
+    code: (block: any) => (
+      <pre data-language={block.node.language}>
+        <code>{block.node.code}</code>
+      </pre>
+    ),
+    topic: (block: any) => <TopicInlineCard item={block.node} />,
+  },
+};
+
 export default function PostPage(props: PostPageProps) {
   const {
+    page,
     post,
     pagination: { nextPageHref, previousPageHref, page: relatedPages },
   } = props;
 
-  // console.log(relatedPages);
-
   return (
-    <PageWrapper>
+    <PageWrapper page={page} title={post.title}>
       <h1>{post.title}</h1>
-      <p>{post.body}</p>
+      <BlockContent blocks={post.body} serializers={serializers} />
       <nav>
         <ul>
           {relatedPages.next && (

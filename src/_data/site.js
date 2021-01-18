@@ -6,9 +6,11 @@ const featuredTopicsSubquery = `
 featuredTopics[]-> {
       'slug': slug.current,
       title,
-      shortDescription,
+      introduction,
       'logo': logo.asset ->,
       url,
+      promo,
+      kind
     }
 `;
 

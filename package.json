@@ -29,6 +29,7 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.12.0",
+    "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.0.1",
     "@sanity/image-url": "^0.140.19",
     "@types/react": "^16.9.53",

@@ -1,13 +1,21 @@
-function generatePost(id) {
-  return {
-    slug: id,
-    title: `${id} Title`,
-    body: `${id} body`,
-  };
-}
+const client = require('../../sanityClient');
 
-async function getPosts() {
-  return ['First', 'Second', 'Third'].map(generatePost);
-}
+const query = `
+  *[_type == 'post'] {
+    title,
+    'slug': slug.current,
+    introduction,
+    'hero': hero.asset ->,
+    body[] {
+      ...,
+      _type == "reference" => ^-> {
+        ...,
+        'slug': slug.current
+      }
+    },
+    publishedAt,
+    promo
+  }
+`;
 
-module.exports = getPosts;
+module.exports = client.fetch(query);

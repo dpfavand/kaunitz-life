@@ -3,9 +3,10 @@ const client = require('../../sanityClient');
 const query = `
   *[_type == 'topic' && kind == 'tool'] {
     title,
-    shortDescription,
+    introduction,
     'slug': slug.current,
-    'logo': logo.asset ->
+    'logo': logo.asset ->,
+    promo
   }
 `;
 

@@ -3,5 +3,6 @@
     "jsx": "preserve",
     "esModuleInterop": true,
     "strict": true,
+    "target": "ES6"
   }
 }

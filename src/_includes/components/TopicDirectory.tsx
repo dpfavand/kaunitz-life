@@ -27,7 +27,7 @@ export default function TopicDirectory(props: TopicDirectoryProps) {
             {item.title}
             {/* </a> */}
           </HeadingTag>
-          <p>{item.shortDescription}</p>
+          <p>{item?.promo?.blurb || item.introduction}</p>
         </li>
       ))}
     </ul>
