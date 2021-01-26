@@ -1110,6 +1110,7 @@ nav li {
     / 96px auto;
   column-gap: 10px;
   row-gap: 10px;
+  margin-top: 10px;
 }
 
 .topic-list h2, .topic-list h3 {
