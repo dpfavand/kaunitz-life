@@ -1,12 +1,11 @@
 const client = require('../../sanityClient');
 
 const query = `
-  *[_type == 'topic' && kind == 'does'] {
+  *[_type == 'kaunitzMeme'] {
     title,
-    introduction,
     'slug': slug.current,
-    'logo': logo.asset ->,
-    promo 
+    'image': image.asset ->
+    publishedAt
   }
 `;
 

@@ -1,14 +1,14 @@
 
 require('dotenv').config();
-const eleventyReact = require("eleventy-plugin-react");
+// const eleventyReact = require("eleventy-plugin-react");
 const { PurgeCSS } = require('purgecss');
-const postProcess = require('./template')
+// const postProcess = require('./template')
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(eleventyReact, { 
-    exts: ["ts", "tsx"],
-    postProcess,
-  });
+  // eleventyConfig.addPlugin(eleventyReact, { 
+  //   exts: ["ts", "tsx"],
+  //   postProcess,
+  // });
 
   eleventyConfig.addWatchTarget("./src/styles.css");
 
