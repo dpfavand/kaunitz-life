@@ -1,0 +1,15 @@
+---
+pagination:
+  data: memes
+  size: 1
+  alias: meme
+permalink: "memes/{{ meme.slug }}/"
+layout: page.njk
+---
+<nav>
+  <a href="/">Kaunitz Life</a>
+  / am meme
+</nav>
+<h1>{{meme.title}}
+  {% image meme.image,
+  meme.altText %}</li>

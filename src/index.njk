@@ -1,0 +1,18 @@
+---
+title: Kaunitz Life
+layout: page.njk
+---
+
+<h1>Kauniz Life<h1>
+    <h2>Memes</h2>
+
+    <ul class="meme-list">
+      {% for meme in memes %}
+        <li>
+          <a href="/memes/{{ meme.slug }}">
+            {% image meme.image,
+            meme.altText %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>

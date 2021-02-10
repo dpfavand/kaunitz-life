@@ -4,7 +4,8 @@ const query = `
   *[_type == 'kaunitzMeme'] {
     title,
     'slug': slug.current,
-    'image': image.asset ->
+    'image': image.asset ->,
+    'altText': image.alt,
     publishedAt
   }
 `;

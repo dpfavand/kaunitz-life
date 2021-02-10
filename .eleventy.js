@@ -10,6 +10,17 @@ module.exports = function (eleventyConfig) {
   //   postProcess,
   // });
 
+  eleventyConfig.addShortcode("image", function(asset, altText = "") {
+    return `
+    <img 
+        src="${asset.url}" 
+        altText="${altText}" 
+        width="${asset.metadata.dimensions.width}"
+        height="${asset.metadata.dimensions.height}"
+    />
+    `
+  })
+
   eleventyConfig.addWatchTarget("./src/styles.css");
 
 
