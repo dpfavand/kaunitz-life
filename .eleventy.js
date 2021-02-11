@@ -2,7 +2,10 @@
 require('dotenv').config();
 // const eleventyReact = require("eleventy-plugin-react");
 const { PurgeCSS } = require('purgecss');
+const sass = require('sass')
 // const postProcess = require('./template')
+
+let css = "";
 
 module.exports = function (eleventyConfig) {
   // eleventyConfig.addPlugin(eleventyReact, { 
@@ -10,18 +13,26 @@ module.exports = function (eleventyConfig) {
   //   postProcess,
   // });
 
-  eleventyConfig.addShortcode("image", function(asset, altText = "") {
+  eleventyConfig.addShortcode("image", function (asset, altText = "") {
     return `
     <img 
         src="${asset.url}" 
-        altText="${altText}" 
+        alt='${altText}' 
         width="${asset.metadata.dimensions.width}"
         height="${asset.metadata.dimensions.height}"
     />
     `
   })
 
-  eleventyConfig.addWatchTarget("./src/styles.css");
+  eleventyConfig.addWatchTarget("./src/scss");
+
+  eleventyConfig.on('beforeBuild', () => {
+    const result = sass.renderSync({
+      file: './src/scss/styles.scss'
+    })
+
+    css = result.css.toString();
+  });
 
 
   eleventyConfig.addTransform("inline-css", async function (content, outputPath) {
@@ -31,7 +42,9 @@ module.exports = function (eleventyConfig) {
         extension: 'html',
       }],
       css: [
-        './src/styles.css'
+        {
+          raw: css
+        }
       ]
     });
 

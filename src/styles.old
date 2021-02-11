@@ -1091,7 +1091,6 @@ body > footer {
   margin: 0;
   padding: 0;
   scroll-snap-type: y mandatory;
-  height: 80vh;
   overflow: scroll;
   display: flex;
 }
@@ -1101,5 +1100,5 @@ body > footer {
   display: block;
   min-height: 80vh;
   scroll-snap-align: start;
-  flex: 1 0 100vw;
+  flex: 1 0 100%;
 }
